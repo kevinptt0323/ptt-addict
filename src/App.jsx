@@ -35,6 +35,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       page: 0,
+      score: 0,
     };
   }
 
@@ -42,17 +43,24 @@ class App extends React.Component {
     this.setState({ page: this.state.page+1 });
   };
 
+  addScore = (score) => {
+    this.setState({ score: this.state.score+score });
+  }
+
   render() {
     const {
       classes,
     } = this.props;
     const {
       page,
+      score,
     } = this.state;
 
     let Component;
     let props = {
       nextPage: this.nextPage,
+      addScore: this.addScore,
+      page,
     };
 
     if (page === 0) {
@@ -60,11 +68,11 @@ class App extends React.Component {
     } else if (page <= data.questions.length) {
       Component = Question;
       props.question = data.questions[page-1];
-      props.page = page;
       if (page == data.questions.length)
         props.last = true;
     } else {
       Component = End;
+      props.score = score;
     }
 
     return (

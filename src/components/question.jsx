@@ -34,10 +34,12 @@ class Question extends React.Component {
   render() {
     const {
       nextPage,
+      addScore,
       page,
       last,
       question
     } = this.props;
+    const { select } = this.state;
     let {
       description,
       type,
@@ -45,10 +47,13 @@ class Question extends React.Component {
       options,
     } = question;
     if (type == "tf")
-      options = ["是", "否"].map(opt => ({
-        description: opt,
+      options = [{
+        description: "是",
         score,
-      }));
+      },{
+        description: "否",
+        score: 0,
+      }]
     return [
       <Typography type='display1' align='center' gutterBottom>ptt-aholic - 第 { page } 題</Typography>,
       <Typography type='headline' align='left' gutterBottom style={{ maxWidth: '1200px' }}>{ description }</Typography>,
@@ -57,14 +62,14 @@ class Question extends React.Component {
           options.map((opt, index) => (
             <Paper
               key={`${page}-${index}`}
-              style={{...styles.paper, background: index == this.state.select ? '#999' : '#666' }}
+              style={{...styles.paper, background: index == select ? '#999' : '#666' }}
               onClick={() => this.handleSelect(index)}>
               <Typography type='headline'>{ opt.description }</Typography>
             </Paper>
           ))
         }
       </div>,
-      <Button raised color='primary' onClick={ nextPage } disabled={this.state.select === null}>
+      <Button raised color='primary' onClick={ () => { addScore(options[select].score); nextPage(); }} disabled={this.state.select === null}>
         <Typography>{ last ? "看結果" : "下一題" }</Typography>
       </Button>,
     ];
