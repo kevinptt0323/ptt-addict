@@ -1,7 +1,98 @@
 {
 	"questions": [
 		{
-			"description": "你曾經不止一次，因為點開 ptt 相關程式卻無法連線，而感到心情低落",
+			"description": "過去48小時，你曾經點開以下程式五次以上",
+			"type": "tf",
+			"score": 3
+		},
+		{
+			"description": "請根據以下畫面做出反應",
+			"images": ["./images/wey064D.png"],
+			"type": "multiple",
+			"options": [
+				{
+					"description": "寫作業/做工作",
+					"score": 0
+				},
+				{
+					"description": "頁庫存檔",
+					"score": 3
+				},
+				{
+					"description": "重新整理",
+					"score": 3
+				},
+				{
+					"description": "滑 Facebook",
+					"score": 1
+				}
+			]
+		},
+		{
+			"description": "過去48小時，你曾經前往批踢踢實業坊(ptt.cc)粉絲專頁",
+			"type": "multiple",
+			"options": [
+				{
+					"description": "1 次以下(含)",
+					"score": 0
+				},
+				{
+					"description": "2~4 次",
+					"score": 1
+				},
+				{
+					"description": "5~9 次",
+					"score": 2
+				},
+				{
+					"description": "10 次以上",
+					"score": 4
+				}
+			]
+		},
+		{
+			"description": "過去48小時，你效率提升，已經把作業寫完/工作做完了",
+			"type": "tf",
+			"score": 5
+		},
+		{
+			"description": "過去48小時，你出門的時間比平常多出 1 倍以上",
+			"type": "tf",
+			"score": 5
+		},
+		{
+			"description": "過去48小時，走路、搭乘交通工具或吃飯時，你突然覺得特別無聊",
+			"type": "tf",
+			"score": 5
+		},
+		{
+			"description": "過去48小時，你曾經因為無法使用 ptt，而發了至少一篇廢文在其他地方",
+			"type": "tf",
+			"score": 5
+		},
+		{
+			"description": "當你看到這些新聞時，想立刻去八卦版看戲",
+			"type": "tf",
+			"score": 5
+		},
+		{
+			"description": "過去48小時，你曾經覺得吃不下飯、睡不著覺、呼吸困難、心不在焉、流離失所、找不到朋友分享心情",
+			"type": "tf",
+			"score": 5
+		},
+		{
+			"description": "你曾經不止一次，懷疑 ptt 維修是特定人士所為",
+			"type": "tf",
+			"score": 5
+		},
+		{
+			"description": "一個禮拜之前，你很少使用 D卡、F**kbook、Instag**m。但是過去48小時，你把所有文章以及動態都看完了",
+			"type": "tf",
+			"score": 5
+		},
+		{
+			"description": "看到這張圖，你覺得神清氣爽",
+			"images": ["./images/6YBnLPG.png"],
 			"type": "tf",
 			"score": 5
 		},
@@ -11,19 +102,19 @@
 			"options": [
 				{
 					"description": "[爆掛] PTT 斷線了",
-					"score": 3
+					"score": 0
 				},
 				{
 					"description": "[問卦] PTT 大斷線是不是想掩蓋什麼？",
-					"score": 5
+					"score": 3
 				},
 				{
 					"description": "[新聞] 新進度！PTT最快要等到後天才會好",
-					"score": 7
+					"score": 3
 				},
 				{
 					"description": "Re: [么告] 11/3 開機公告",
-					"score": 10
+					"score": 5
 				}
 			]
 		}
