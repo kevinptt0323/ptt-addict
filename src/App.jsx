@@ -6,6 +6,9 @@ import grey from 'material-ui/colors/lightBlue';
 
 import Home from './components/home.jsx';
 import Question from './components/question.jsx';
+import End from './components/end.jsx';
+
+import data from './data.json';
 
 const theme = createMuiTheme({
   palette: {
@@ -48,23 +51,26 @@ class App extends React.Component {
     } = this.state;
 
     let Component;
+    let props = {
+      nextPage: this.nextPage,
+    };
 
-    switch(page) {
-      case 0:
-        Component = Home;
-        break;
-      case 1:
-        Component = Question;
-        break;
-      default:
-        Component = 'div';
-        break;
+    if (page === 0) {
+      Component = Home;
+    } else if (page <= data.questions.length) {
+      Component = Question;
+      props.question = data.questions[page-1];
+      props.page = page;
+      if (page == data.questions.length)
+        props.last = true;
+    } else {
+      Component = End;
     }
 
     return (
       <MuiThemeProvider theme={theme}>
         <Paper className={ classes.container }>
-          <Component nextPage={ this.nextPage } />
+          <Component {...props}/>
         </Paper>
       </MuiThemeProvider>
     );
