@@ -1,0 +1,31 @@
+{
+	"questions": [
+		{
+			"description": "你曾經不止一次，因為點開 ptt 相關程式卻無法連線，而感到心情低落",
+			"type": "tf",
+			"score": 5
+		},
+		{
+			"description": "以下四篇文章，你最想看哪一篇",
+			"type": "multiple",
+			"options": [
+				{
+					"description": "[爆掛] PTT 斷線了",
+					"score": 3
+				},
+				{
+					"description": "[問卦] PTT 大斷線是不是想掩蓋什麼？",
+					"score": 5
+				},
+				{
+					"description": "[新聞] 新進度！PTT最快要等到後天才會好",
+					"score": 7
+				},
+				{
+					"description": "Re: [么告] 11/3 開機公告",
+					"score": 10
+				}
+			]
+		}
+	]
+}

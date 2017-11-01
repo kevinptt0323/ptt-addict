@@ -1,6 +1,5 @@
 const webpack = require('webpack');
 const path = require('path');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const config = {
   devtool: 'cheap-module-source-map',
