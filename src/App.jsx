@@ -44,7 +44,7 @@ class App extends React.Component {
     if (page == 0) {
       ga('set', 'page', '#/home');
     } else if (page >= 1 && page <= data.questions.length) {
-      ga('set', 'page', `#/questions/{page}`);
+      ga('set', 'page', `#/questions/${page}`);
     } else {
       ga('set', 'page', '#/end');
     }
