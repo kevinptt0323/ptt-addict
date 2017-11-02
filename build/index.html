@@ -9,11 +9,11 @@
 
     <meta property="og:locale" content="zh_TW" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="PTT addict" />
+    <meta property="og:title" content="PTT Addict" />
     <meta property="og:description" content="測驗你是否有 PTT 成癮症" />
     <meta property="og:url" content="https://kevinptt0323.github.io/ptt-addict" />
-    <meta property="og:site_name" content="PTT addict" />
-    <meta property="og:image" content="" />
+    <meta property="og:site_name" content="PTT Addict" />
+    <meta property="og:image" content="https://kevinptt.me/ptt-addict/images/GczbJKD.png" />
 
     <style>
 body {
@@ -31,6 +31,25 @@ body {
   justify-content: center;
 }
     </style>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : '127829194595204',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v2.10'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/zh_TW/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
   </head>
   <body>
     <div id="app"></div>
