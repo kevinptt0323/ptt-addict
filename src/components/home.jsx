@@ -4,7 +4,7 @@ import Typography from 'material-ui/Typography';
 
 const Home = ({ nextPage }) => {
   return [
-    <Typography type='display3' align='center' gutterBottom>ptt-aholic</Typography>,
+    <Typography type='display3' align='center' gutterBottom>PTT addict</Typography>,
     <Typography type='display1' align='center' gutterBottom>測試你是否有 PTT 成癮症</Typography>,
     <Button raised color='primary' onClick={ nextPage }><Typography>開始測驗</Typography></Button>,
   ];

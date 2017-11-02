@@ -57,7 +57,7 @@ class Question extends React.Component {
         score: 0,
       }]
     return [
-      <Typography type='display1' align='center' gutterBottom>ptt-aholic - 第 { page } 題</Typography>,
+      <Typography type='display1' align='center' gutterBottom>第 { page } 題</Typography>,
       <Typography type='headline' align='left' gutterBottom style={{ maxWidth: '1200px' }}>
         { description }
         { images.map((src, index) => <div key={`${page}-img${index}`} style={{ maxWidth: '100%', padding: '16px', textAlign: 'center' }}>
