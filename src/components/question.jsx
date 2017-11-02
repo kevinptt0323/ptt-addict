@@ -7,11 +7,14 @@ const styles = {
   paper: {
     flex: 1,
     margin: '8px',
-    minWidth: 'calc(50% - 16px)',
+    width: 'calc(50% - 16px)',
+    minWidth: '200px',
     minHeight: '100px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    padding: '16px',
+    boxSizing: 'border-box',
     cursor: 'pointer',
   },
 };
@@ -57,7 +60,9 @@ class Question extends React.Component {
       <Typography type='display1' align='center' gutterBottom>ptt-aholic - 第 { page } 題</Typography>,
       <Typography type='headline' align='left' gutterBottom style={{ maxWidth: '1200px' }}>
         { description }
-        { images.map((src, index) => <img key={`${page}-img${index}`} src={src} style={{ maxWidth: '90%' }}/>) }
+        { images.map((src, index) => <div key={`${page}-img${index}`} style={{ maxWidth: '100%', padding: '16px', textAlign: 'center' }}>
+            <img src={src} style={{ maxWidth: '100%' }}/>
+          </div>) }
       </Typography>,
       <div style={{ display: 'flex', flexWrap: 'wrap', width: '100%' }}>
         {
