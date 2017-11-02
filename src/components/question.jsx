@@ -24,9 +24,19 @@ class Question extends React.Component {
     super(props);
     this.state = { select: null };
   }
-  handleSelect(page) {
+  handleSelect = (page) => {
     this.setState({ select: page });
-  }
+  };
+  handleAnswer = (index, score) => {
+    const {
+      addScore,
+      nextPage,
+      page,
+    } = this.props;
+    addScore(score);
+    ga('send', 'event', 'examine', 'answer', page, index+1);
+    nextPage();
+  };
   componentWillReceiveProps(nextProps) {
     if (this.props.page !== nextProps.page) {
       this.setState({ select: null });
@@ -35,7 +45,6 @@ class Question extends React.Component {
   render() {
     const {
       nextPage,
-      addScore,
       page,
       last,
       question
@@ -57,12 +66,6 @@ class Question extends React.Component {
         description: "否",
         score: 0,
       }]
-
-    console.log(links);
-    links.map((obj, index) => {
-      console.log(index);
-      return index;
-    });
 
     const linksComp = links.length ? <ul>{
       links.map(({ href, title }, index) => (
@@ -94,7 +97,7 @@ class Question extends React.Component {
           ))
         }
       </div>,
-      <Button raised color='primary' onClick={ () => { addScore(options[select].score); nextPage(); }} disabled={this.state.select === null}>
+      <Button raised color='primary' onClick={ () => { this.handleAnswer(select, options[select].score); }} disabled={this.state.select === null}>
         <Typography type='headline'>{ last ? "看結果" : "下一題" }</Typography>
       </Button>,
     ];

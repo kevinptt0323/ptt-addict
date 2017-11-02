@@ -6,10 +6,15 @@ class End extends React.Component {
   constructor(props) {
     super(props);
   }
+  componentDidMount() {
+    ga('send', 'event', 'examine', 'finish', 'score', this.props.score);
+  }
   share = () => {
+    const url = window.location + "";
+    ga('send', 'social', 'Facebook', 'share', url);
     FB.ui({
       method: 'share',
-      href: window.location + "",
+      href: url,
       quote: `檢驗報告指出，我有 ${this.props.score} % 的 PTT 成癮症！`,
       hashtag: '#PTT戒斷中',
     }, function(response){});

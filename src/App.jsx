@@ -39,12 +39,37 @@ class App extends React.Component {
     };
   }
 
+  gaSetPage = () => {
+    const { page } = this.state;
+    if (page == 0) {
+      ga('set', 'page', '#/home');
+    } else if (page >= 1 && page <= data.questions.length) {
+      ga('set', 'page', `#/questions/{page}`);
+    } else {
+      ga('set', 'page', '#/end');
+    }
+  };
+
   nextPage = () => {
-    this.setState({ page: this.state.page+1 });
+    const { page } = this.state;
+    this.setState({ page: page+1 });
+    if (this.state.page == 0) {
+      ga('send', 'event', 'examine', 'start');
+    }
   };
 
   addScore = (score) => {
     this.setState({ score: this.state.score+score });
+  }
+
+  componentDidMount() {
+    this.gaSetPage();
+    ga('send', 'pageview');
+  }
+
+  componentDidUpdate() {
+    this.gaSetPage();
+    ga('send', 'pageview');
   }
 
   render() {
