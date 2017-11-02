@@ -47,6 +47,7 @@ class Question extends React.Component {
       score,
       options,
       images=[],
+      links=[],
     } = question;
     if (type == "tf")
       options = [{
@@ -56,10 +57,27 @@ class Question extends React.Component {
         description: "否",
         score: 0,
       }]
+
+    console.log(links);
+    links.map((obj, index) => {
+      console.log(index);
+      return index;
+    });
+
+    const linksComp = links.length ? <ul>{
+      links.map(({ href, title }, index) => (
+        <li key={`${page}-link${index}`}>
+          <a href={href} target="_blank"><Typography type='title' style={{ display: 'inline-block', textDecoration: 'underline' }}>
+            { title }
+          </Typography></a>
+        </li>
+      ))
+    }</ul> : null;
     return [
       <Typography type='display1' align='center' gutterBottom>第 { page } 題</Typography>,
       <Typography type='headline' align='left' gutterBottom style={{ maxWidth: '1200px' }}>
         { description }
+        { linksComp }
         { images.map((src, index) => <div key={`${page}-img${index}`} style={{ maxWidth: '100%', padding: '16px', textAlign: 'center' }}>
             <img src={src} style={{ maxWidth: '100%' }}/>
           </div>) }
@@ -77,7 +95,7 @@ class Question extends React.Component {
         }
       </div>,
       <Button raised color='primary' onClick={ () => { addScore(options[select].score); nextPage(); }} disabled={this.state.select === null}>
-        <Typography>{ last ? "看結果" : "下一題" }</Typography>
+        <Typography type='headline'>{ last ? "看結果" : "下一題" }</Typography>
       </Button>,
     ];
   }

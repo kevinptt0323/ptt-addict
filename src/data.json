@@ -50,6 +50,20 @@
 		},
 		{
 			"description": "當你看到這些新聞時，想立刻去八卦版看戲",
+			"links": [
+				{
+					"href": "http://news.ltn.com.tw/news/business/breakingnews/2239820",
+					"title": "趙藤雄30分鐘湊5.5億 柯文哲4字神回... - 自由時報"
+				},
+				{
+					"href": "https://tw.appledaily.com/new/realtime/20171031/1232369/",
+					"title": "【中職總冠軍賽】單場得分打破中職紀錄　桃猿19比3擊潰中信聽牌 - 蘋果日報"
+				},
+				{
+					"href": "https://udn.com/news/story/6656/2789558",
+					"title": "罷免黃國昌確定成案 12月16日投票 - 聯合新聞網"
+				}
+			],
 			"type": "tf",
 			"score": 7
 		},
