@@ -34,7 +34,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      page: data.questions.length,
+      page: 0,
       score: 0,
     };
   }
