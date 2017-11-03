@@ -17,7 +17,7 @@ class End extends React.Component {
       method: 'share',
       href: url,
       quote: `檢驗報告指出，我有 ${this.props.score} % 的 PTT 成癮症！`,
-      hashtag: '#PTT戒斷中',
+      hashtag: '#PTT成癮症',
     }, function(response){});
   };
   render() {
