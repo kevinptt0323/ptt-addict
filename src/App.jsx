@@ -39,8 +39,7 @@ class App extends React.Component {
     };
   }
 
-  gaSetPage = () => {
-    const { page } = this.state;
+  gaSetPage = (page) => {
     if (page == 0) {
       ga('set', 'page', '#/home');
     } else if (page >= 1 && page <= data.questions.length) {
@@ -60,15 +59,15 @@ class App extends React.Component {
 
   addScore = (score) => {
     this.setState({ score: this.state.score+score });
-  }
+  };
 
-  componentDidMount() {
-    this.gaSetPage();
+  componentWillMount() {
+    this.gaSetPage(this.state.page);
     ga('send', 'pageview');
   }
 
-  componentDidUpdate() {
-    this.gaSetPage();
+  componentWillUpdate(nextProps, nextState) {
+    this.gaSetPage(nextState.page);
     ga('send', 'pageview');
   }
 

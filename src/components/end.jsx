@@ -8,6 +8,7 @@ class End extends React.Component {
   }
   componentDidMount() {
     ga('send', 'event', 'examine', 'finish', 'score', this.props.score);
+    ga('send', 'event', 'examine', 'score', `${this.props.score}`);
   }
   share = () => {
     const url = window.location + "";

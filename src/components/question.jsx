@@ -35,6 +35,7 @@ class Question extends React.Component {
     } = this.props;
     addScore(score);
     ga('send', 'event', 'examine', 'answer', page, index+1);
+    ga('send', 'event', 'examine', `answer-${page}`, `${index+1}`);
     nextPage();
   };
   componentWillReceiveProps(nextProps) {
