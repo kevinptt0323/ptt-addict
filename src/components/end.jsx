@@ -24,7 +24,9 @@ class End extends React.Component {
     const { score } = this.props;
     let description = "";
     let color = 'primary';
-    if (score < 80) {
+    if (score < 30) {
+      description = "你有幾乎沒有 PTT 成癮症，偶爾看看 PTT 討論，#獨立思考！";
+    } else if (score >= 30 && score < 80) {
       description = "你有輕度的 PTT 成癮症，適時瀏覽 PTT，增強體魄！";
     } else if (score >= 80 && score < 90) {
       description = "你有中度的 PTT 成癮症，逛 PTT 30 分鐘記得休息 5 分鐘哦！";
